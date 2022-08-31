@@ -1,0 +1,5 @@
+.env
+main.exe
+*tmp
+./docker/tmp
+.vscode
