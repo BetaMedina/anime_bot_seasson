@@ -3,3 +3,4 @@ main.exe
 *tmp
 ./docker/tmp
 .vscode
+config.map.yml

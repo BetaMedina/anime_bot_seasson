@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anime-season-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: anime-season-bot
+  template:
+    metadata:
+      labels:
+        name: anime-season-bot
+    spec:
+      containers:
+      - name: application
+        image: betamedina/anime_seasson_bot:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 4004
+        envFrom:
+          - configMapRef:
+              name: bot-configs
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
